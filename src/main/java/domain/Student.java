@@ -10,16 +10,18 @@ import java.util.List;
  * Created by Andrii_Rodionov on 1/3/2017.
  */
 public class Student extends BasicStudent {
-    private List<Tuple<String, Integer>> studentExams = new ArrayList<>(){};
+    private List<Tuple<String, Integer>> studentExams;
 
     public Student(String name, String surname, Integer year, Tuple<String, Integer>... exams) {
         super(name, surname, year);
+        studentExams = new ArrayList<>(){};
         studentExams.addAll(Arrays.asList(exams));
     }
 
     @Override
     public JsonObject toJsonObject() {
-        List<JsonObject> exams = new ArrayList<>(){};
+        List<JsonObject> exams;
+        exams = new ArrayList<>(){};
         JsonObject student = new JsonObject();
 
         for (Tuple<String, Integer> exam: studentExams) {

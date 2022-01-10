@@ -7,9 +7,10 @@ import java.util.stream.Collectors;
  * Created by Andrii_Rodionov on 1/3/2017.
  */
 public class JsonObject extends Json {
-    List<JsonPair> jsonObj = new ArrayList<>(){};
+    List<JsonPair> jsonObj;
 
     public JsonObject(JsonPair... jsonPairs) {
+        jsonObj = new ArrayList<>(){};
         for (JsonPair pair: jsonPairs) {
             this.add(pair);
         }
