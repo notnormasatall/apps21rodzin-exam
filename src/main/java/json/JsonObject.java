@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
  * Created by Andrii_Rodionov on 1/3/2017.
  */
 public class JsonObject extends Json {
-    List<JsonPair> jsonObj = new ArrayList<JsonPair>(){};
+    List<JsonPair> jsonObj = new ArrayList<>(){};
 
     public JsonObject(JsonPair... jsonPairs) {
         for (JsonPair pair: jsonPairs) {
@@ -75,7 +75,7 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         List<JsonPair> copy = new ArrayList<>(jsonObj);
-        List<String> keys = new ArrayList<String>(){};
+        List<String> keys = new ArrayList<>(){};
 
         keys.addAll(Arrays.asList(names));
         List<JsonPair> res = copy.stream()
